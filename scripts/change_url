@@ -1,0 +1,47 @@
+#!/bin/bash
+
+#=================================================
+# GENERIC STARTING
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
+source _common.sh
+source /usr/share/yunohost/helpers
+
+#=================================================
+# STANDARD MODIFICATIONS
+#=================================================
+# MODIFY URL IN NGINX CONF
+#=================================================
+ynh_script_progression --message="Updating NGINX web server configuration..." --weight=1
+
+ynh_change_url_nginx_config
+
+#=================================================
+# SPECIFIC MODIFICATIONS
+#=================================================
+# Build Jellyfin-vue
+#=================================================
+ynh_script_progression --message="Building Jellyfin Vue... (this will take some time and resources!)" --weight=24
+
+# Already patched in install script
+# _patch_config_json "$install_dir/source"
+rm -rf "$install_dir/www"
+_npm_build_install "$install_dir/source" "$install_dir/www" "$path/"
+
+#=================================================
+# ADD A CONFIGURATION
+#=================================================
+ynh_script_progression --message="Adding a configuration file..." --weight=1
+
+# Check if Jellyfin is installed, and configure it as defaultServerURL.
+for url in $(_list_jellyfin_urls); do
+    _append_to_server_urls "$install_dir/www/config.json" "$url"
+done
+
+#=================================================
+# END OF SCRIPT
+#=================================================
+
+ynh_script_progression --message="Change of URL completed for $app" --last
