@@ -19,6 +19,11 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 Un client web moderne pour Jellyfin basé sur Vue.
 
 **Version incluse :** 0.3~ynh1
+
+## Captures d’écran
+
+![Capture d’écran de Jellyfin Vue Client](./doc/screenshots/jellyfin-vue-homepage-2023-04.jpg)
+
 ## Documentations et ressources
 
 * Site officiel de l’app : <https://github.com/jellyfin/jellyfin-vue>

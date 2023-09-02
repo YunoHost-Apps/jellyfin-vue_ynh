@@ -19,6 +19,11 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 A modern web client for Jellyfin based on Vue.
 
 **Shipped version:** 0.3~ynh1
+
+## Screenshots
+
+![Screenshot of Jellyfin Vue Client](./doc/screenshots/jellyfin-vue-homepage-2023-04.jpg)
+
 ## Documentation and resources
 
 * Official app website: <https://github.com/jellyfin/jellyfin-vue>
