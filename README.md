@@ -16,7 +16,11 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 ## Overview
 
-A modern web client for Jellyfin based on Vue.
+Jellyfin Vue is the next step of Jellyfin's development.
+It's a new frontend, based on Vue.
+
+See https://jellyfin.org/posts/vue-vue3 for details.
+
 
 **Shipped version:** 0.3~ynh1
 
