@@ -1,0 +1,91 @@
+#!/bin/bash
+
+#=================================================
+# GENERIC START
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
+source _common.sh
+source /usr/share/yunohost/helpers
+
+upgrade_type=$(ynh_check_app_version_changed)
+
+#=================================================
+# STANDARD UPGRADE STEPS
+#=================================================
+# ENSURE DOWNWARD COMPATIBILITY
+#=================================================
+#ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
+
+#
+# N.B. : the followings setting migrations snippets are provided as *EXAMPLES*
+# of what you may want to do in some cases (e.g. a setting was not defined on
+# some legacy installs and you therefore want to initiaze stuff during upgrade)
+#
+
+# If db_name doesn't exist, create it
+#if [ -z "$db_name" ]; then
+#	db_name=$(ynh_sanitize_dbid --db_name=$app)
+#	ynh_app_setting_set --app=$app --key=db_name --value=$db_name
+#fi
+
+# If install_dir doesn't exist, create it
+#if [ -z "$install_dir" ]; then
+#	install_dir=/var/www/$app
+#	ynh_app_setting_set --app=$app --key=install_dir --value=$install_dir
+#fi
+
+#=================================================
+# "REBUILD" THE APP (DEPLOY NEW SOURCES, RERUN NPM BUILD...)
+#=================================================
+# DOWNLOAD, CHECK AND UNPACK SOURCE
+#=================================================
+
+if [ "$upgrade_type" == "UPGRADE_APP" ]
+then
+	ynh_script_progression --message="Upgrading source files..." --weight=1
+
+	# Download, check integrity, uncompress and patch the source from app.src
+	ynh_setup_source --dest_dir="$install_dir"
+
+	ynh_script_progression --message="Installing NodeJS..." --weight=20
+
+	# Install Nodejs
+	ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
+
+	ynh_script_progression --message="Building Jellyfin Vue... (this will take some time and resources!)" --weight=24
+
+	_patch_config_json "$install_dir/source"
+	_npm_build_install "$install_dir/source" "$install_dir/www" "$path/"
+fi
+
+# $install_dir will automatically be initialized with some decent
+# permission by default ... however, you may need to recursively reapply
+# ownership to all files such as after the ynh_setup_source step
+chown -R $app:www-data "$install_dir"
+
+#=================================================
+# REAPPLY SYSTEM CONFIGURATIONS
+#=================================================
+ynh_script_progression --message="Upgrading system configurations related to $app..." --weight=1
+
+ynh_add_nginx_config
+
+#=================================================
+# RECONFIGURE THE APP (UPDATE CONF, APPLY MIGRATIONS...)
+#=================================================
+# UPDATE A CONFIG FILE
+#=================================================
+ynh_script_progression --message="Updating a configuration file..." --weight=1
+
+# Check if Jellyfin is installed, and configure it as defaultServerURL.
+for url in $(_list_jellyfin_urls); do
+    _append_to_server_urls "$install_dir/www/config.json" "$url"
+done
+
+#=================================================
+# END OF SCRIPT
+#=================================================
+
+ynh_script_progression --message="Upgrade of $app completed" --last
