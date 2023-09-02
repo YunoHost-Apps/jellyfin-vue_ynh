@@ -53,7 +53,7 @@ ynh_add_nginx_config
 #=================================================
 ynh_script_progression --message="Adding a configuration file..." --weight=1
 
-# Check if Yunohost is installed, and configure it as defaultServerURL.
+# Check if Jellyfin is installed, and configure it as defaultServerURL.
 for url in $(_list_jellyfin_urls); do
     _append_to_server_urls "$install_dir/www/config.json" "$url"
 done
