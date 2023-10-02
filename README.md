@@ -30,7 +30,6 @@ See https://jellyfin.org/posts/vue-vue3 for details.
 
 ## Documentation and resources
 
-* Official app website: <https://github.com/jellyfin/jellyfin-vue>
 * Upstream app code repository: <https://github.com/jellyfin/jellyfin-vue>
 * Report a bug: <https://github.com/YunoHost-Apps/jellyfin-vue_ynh/issues>
 
