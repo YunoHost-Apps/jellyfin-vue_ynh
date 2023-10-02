@@ -22,7 +22,7 @@ It's a new frontend, based on Vue.
 See https://jellyfin.org/posts/vue-vue3 for details.
 
 
-**Shipped version:** 0.3~ynh1
+**Shipped version:** 0.3.1~ynh1
 
 ## Screenshots
 
@@ -32,7 +32,6 @@ See https://jellyfin.org/posts/vue-vue3 for details.
 
 * Official app website: <https://github.com/jellyfin/jellyfin-vue>
 * Upstream app code repository: <https://github.com/jellyfin/jellyfin-vue>
-* YunoHost documentation for this app: <https://yunohost.org/app_jellyfin-vue>
 * Report a bug: <https://github.com/YunoHost-Apps/jellyfin-vue_ynh/issues>
 
 ## Developer info
