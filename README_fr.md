@@ -33,7 +33,6 @@ Des détails peuvent être trouvés ici : https://jellyfin.org/posts/vue-vue3.
 
 * Site officiel de l’app : <https://github.com/jellyfin/jellyfin-vue>
 * Dépôt de code officiel de l’app : <https://github.com/jellyfin/jellyfin-vue>
-* Documentation YunoHost pour cette app : <https://yunohost.org/app_jellyfin-vue>
 * Signaler un bug : <https://github.com/YunoHost-Apps/jellyfin-vue_ynh/issues>
 
 ## Informations pour les développeurs
