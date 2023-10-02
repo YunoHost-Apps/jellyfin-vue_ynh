@@ -12,8 +12,7 @@ version = "0.3.1~ynh1"
 maintainers = ["johndoe"]
 
 [upstream]
-license = "GPLv3"
-website = "https://github.com/jellyfin/jellyfin-vue"
+license = " GPL-3.0-only"
 # admindoc = "https://yunohost.org/packaging_apps"
 # userdoc = "https://yunohost.org/apps"
 code = "https://github.com/jellyfin/jellyfin-vue"
