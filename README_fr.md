@@ -23,7 +23,7 @@ C'est une nouvelle interface, basée sur Vue.
 Des détails peuvent être trouvés ici : https://jellyfin.org/posts/vue-vue3.
 
 
-**Version incluse :** 0.3~ynh1
+**Version incluse :** 0.3.1~ynh1
 
 ## Captures d’écran
 

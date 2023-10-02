@@ -22,7 +22,7 @@ It's a new frontend, based on Vue.
 See https://jellyfin.org/posts/vue-vue3 for details.
 
 
-**Shipped version:** 0.3~ynh1
+**Shipped version:** 0.3.1~ynh1
 
 ## Screenshots
 
