@@ -56,8 +56,8 @@ then
 
 	ynh_script_progression --message="Building Jellyfin Vue... (this will take some time and resources!)" --weight=24
 
-	_patch_config_json "$install_dir/source"
-	_npm_build_install "$install_dir/source" "$install_dir/www" "$path/"
+	ynh_exec_as $app _patch_config_json "$install_dir/source"
+	ynh_exec_as $app _npm_build_install "$install_dir/source" "$install_dir/www" "$path/"
 fi
 
 # $install_dir will automatically be initialized with some decent
