@@ -16,14 +16,10 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 ## Vue d’ensemble
 
-Jellyfin Vue est la prochaine étape du développement de Jellyfin.
-
-C'est une nouvelle interface, basée sur Vue.
-
-Des détails peuvent être trouvés ici : https://jellyfin.org/posts/vue-vue3.
+Jellyfin Vue est la prochaine étape du développement de Jellyfin. C'est une nouvelle interface, basée sur Vue. Des détails peuvent être trouvés ici : https://jellyfin.org/posts/vue-vue3.
 
 
-**Version incluse :** 0.3.1~ynh1
+**Version incluse :** 0.3.1~ynh2
 
 ## Captures d’écran
 

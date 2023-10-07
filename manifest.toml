@@ -4,23 +4,20 @@ packaging_format = 2
 
 id = "jellyfin-vue"
 name = "Jellyfin Vue Client"
-description.en = "A modern web client for Jellyfin based on Vue."
-description.fr = "Un client web moderne pour Jellyfin basé sur Vue."
+description.en = "Modern web client for Jellyfin"
+description.fr = "Client web moderne pour Jellyfin"
 
-version = "0.3.1~ynh1"
+version = "0.3.1~ynh2"
 
 maintainers = ["johndoe"]
 
 [upstream]
-license = " GPL-3.0-only"
-# admindoc = "https://yunohost.org/packaging_apps"
-# userdoc = "https://yunohost.org/apps"
+license = "GPL-3.0-only"
 code = "https://github.com/jellyfin/jellyfin-vue"
-
 fund = "https://opencollective.com/jellyfin"
 
 [integration]
-yunohost = ">= 11.1.21"
+yunohost = ">= 11.2"
 architectures = "all"
 multi_instance = true
 ldap = true
@@ -31,39 +28,26 @@ ram.runtime = "0M"
 
 [install]
     [install.domain]
-    # this is a generic question - ask strings are automatically handled by YunoHost's core
     type = "domain"
 
     [install.path]
-    # this is a generic question - ask strings are automatically handled by YunoHost's core
     type = "path"
     default = "/jellyfin-vue"
 
     [install.init_main_permission]
-    # this is a generic question - ask strings are automatically handled by YunoHost's core
-    # This won't be saved as setting and will instead be used to initialize the SSOwat permission
     type = "group"
     default = "visitors"
 
 [resources]
-    # See the packaging documentation for the full set
-    # of explanation regarding the behavior and properties for each of those
 
     [resources.sources]
 
         [resources.sources.main]
-        # This will pre-fetch the asset which can then be deployed during the install/upgrade scripts with :
-        #    ynh_setup_source --dest_dir="$install_dir"
-        # You can also define other assets than "main" and add --source_id="foobar" in the previous command
-        url = "https://github.com/jellyfin/jellyfin-vue/archive/refs/tags/0.3.1.tar.gz"
-        sha256 = "49316b5f7ef57d09bfa31e5e461fac1866d03902f9b087d2c3ec5b294ed934f8"
+        url = "https://github.com/jellyfin/jellyfin-vue/archive/f1efc3cd0923d09af69debea1e19a08b24310afc.tar.gz"
+        sha256 = "7f3a81a44153b456012bb0c2a0d404eb0b4ac0db1c56768cef7e37ed4eb52c6f"
 
-        # These infos are used by https://github.com/YunoHost/apps/blob/master/tools/autoupdate_app_sources/autoupdate_app_sources.py
-        # to auto-update the previous asset urls and sha256sum + manifest version
-        # assuming the upstream's code repo is on github and relies on tags or releases
-        # See the 'sources' resource documentation for more details
-
-        autoupdate.strategy = "latest_github_tag"
+        autoupdate.upstream = "https://github.com/jellyfin/jellyfin-vue/"
+        autoupdate.strategy = "latest_github_commit"
 
     [resources.system_user]
 
