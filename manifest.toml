@@ -12,11 +12,8 @@ version = "0.3.1~ynh1"
 maintainers = [""]
 
 [upstream]
-license = "GPLv3"
-website = "https://github.com/jellyfin/jellyfin-vue"
-
+license = "GPL-3.0"
 code = "https://github.com/jellyfin/jellyfin-vue"
-
 fund = "https://opencollective.com/jellyfin"
 
 [integration]
