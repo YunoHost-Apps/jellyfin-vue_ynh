@@ -23,7 +23,7 @@ C'est une nouvelle interface, basée sur Vue.
 Des détails peuvent être trouvés ici : https://jellyfin.org/posts/vue-vue3.
 
 
-**Version incluse :** 0.3~ynh1
+**Version incluse :** 0.3.1~ynh1
 
 ## Captures d’écran
 
@@ -31,7 +31,6 @@ Des détails peuvent être trouvés ici : https://jellyfin.org/posts/vue-vue3.
 
 ## Documentations et ressources
 
-* Site officiel de l’app : <https://github.com/jellyfin/jellyfin-vue>
 * Dépôt de code officiel de l’app : <https://github.com/jellyfin/jellyfin-vue>
 * Signaler un bug : <https://github.com/YunoHost-Apps/jellyfin-vue_ynh/issues>
 

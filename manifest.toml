@@ -7,7 +7,7 @@ name = "Jellyfin Vue Client"
 description.en = "Modern web client for Jellyfin"
 description.fr = "Client web moderne pour Jellyfin"
 
-version = "0.3~ynh1"
+version = "0.3.1~ynh1"
 
 maintainers = ["johndoe"]
 
@@ -15,7 +15,6 @@ maintainers = ["johndoe"]
 license = "GPLv3"
 website = "https://github.com/jellyfin/jellyfin-vue"
 code = "https://github.com/jellyfin/jellyfin-vue"
-
 fund = "https://opencollective.com/jellyfin"
 
 [integration]
