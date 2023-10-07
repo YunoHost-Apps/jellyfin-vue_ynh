@@ -27,6 +27,7 @@ Jellyfin Vue is the next step of Jellyfin's development. It's a new frontend, ba
 
 ## Documentation and resources
 
+* Official app website: <https://github.com/jellyfin/jellyfin-vue>
 * Upstream app code repository: <https://github.com/jellyfin/jellyfin-vue>
 * Report a bug: <https://github.com/YunoHost-Apps/jellyfin-vue_ynh/issues>
 
