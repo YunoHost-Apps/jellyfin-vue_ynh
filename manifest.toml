@@ -7,7 +7,7 @@ name = "Jellyfin Vue Client"
 description.en = "Modern web client for Jellyfin"
 description.fr = "Client web moderne pour Jellyfin"
 
-version = "0.3.1~ynh2"
+version = "2023.10.09~ynh1"
 
 maintainers = ["johndoe"]
 
@@ -43,8 +43,8 @@ ram.runtime = "0M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://github.com/jellyfin/jellyfin-vue/archive/f1efc3cd0923d09af69debea1e19a08b24310afc.tar.gz"
-        sha256 = "7f3a81a44153b456012bb0c2a0d404eb0b4ac0db1c56768cef7e37ed4eb52c6f"
+        url = "https://github.com/jellyfin/jellyfin-vue/archive/a131e130ce933be17e84bcbffa4e1fd2ae05a6cf.tar.gz"
+        sha256 = "505dd6904e00b56b29a0b8257001b2e87bb51788d888f516585237ee2f24dedc"
 
         autoupdate.upstream = "https://github.com/jellyfin/jellyfin-vue/"
         autoupdate.strategy = "latest_github_commit"
