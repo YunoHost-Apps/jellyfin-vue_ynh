@@ -42,12 +42,12 @@ ram.runtime = "0M"
 
     [resources.sources]
 
-        [resources.sources.main]
-        url = "https://github.com/jellyfin/jellyfin-vue/archive/f1efc3cd0923d09af69debea1e19a08b24310afc.tar.gz"
-        sha256 = "7f3a81a44153b456012bb0c2a0d404eb0b4ac0db1c56768cef7e37ed4eb52c6f"
+    [resources.sources.main]
+    url = "https://github.com/jellyfin/jellyfin-vue/archive/f1efc3cd0923d09af69debea1e19a08b24310afc.tar.gz"
+    sha256 = "7f3a81a44153b456012bb0c2a0d404eb0b4ac0db1c56768cef7e37ed4eb52c6f"
 
-        autoupdate.upstream = "https://github.com/jellyfin/jellyfin-vue/"
-        autoupdate.strategy = "latest_github_commit"
+    autoupdate.upstream = "https://github.com/jellyfin/jellyfin-vue/"
+    autoupdate.strategy = "latest_github_commit"
 
     [resources.system_user]
 
