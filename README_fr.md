@@ -28,6 +28,7 @@ Jellyfin Vue est la prochaine étape du développement de Jellyfin. C'est une no
 ## Documentations et ressources
 
 * Dépôt de code officiel de l’app : <https://github.com/jellyfin/jellyfin-vue>
+* YunoHost Store: <https://apps.yunohost.org/app/jellyfin-vue>
 * Signaler un bug : <https://github.com/YunoHost-Apps/jellyfin-vue_ynh/issues>
 
 ## Informations pour les développeurs
