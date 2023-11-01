@@ -19,7 +19,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 Jellyfin Vue is the next step of Jellyfin's development. It's a new frontend, based on Vue. See https://jellyfin.org/posts/vue-vue3 for details.
 
 
-**Shipped version:** 2023.10.24~ynh1
+**Shipped version:** 2023.11.01~ynh1
 
 ## Screenshots
 
@@ -28,6 +28,7 @@ Jellyfin Vue is the next step of Jellyfin's development. It's a new frontend, ba
 ## Documentation and resources
 
 * Upstream app code repository: <https://github.com/jellyfin/jellyfin-vue>
+* YunoHost Store: <https://apps.yunohost.org/app/jellyfin-vue>
 * Report a bug: <https://github.com/YunoHost-Apps/jellyfin-vue_ynh/issues>
 
 ## Developer info
