@@ -27,7 +27,7 @@ _npm_build_install() {
     pushd "$sourcedir" || ynh_die "Could not pushd $sourcedir"
         ynh_use_nodejs
         ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" \
-            "$ynh_npm" install
+            "$ynh_npm" ci --no-audit --ignore-scripts
         ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" \
             "$ynh_npm" run build -- --base="$subpath/"
     popd || ynh_die "Could not popd"
