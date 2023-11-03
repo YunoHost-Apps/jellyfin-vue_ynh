@@ -4,7 +4,7 @@
 # COMMON VARIABLES
 #=================================================
 
-nodejs_version=18
+nodejs_version=20
 
 #=================================================
 # PERSONAL HELPERS
@@ -24,12 +24,12 @@ _npm_build_install() {
     targetdir=$2
     subpath=$3
 
-    pushd "$sourcedir" || ynh_die "Could not pushd $sourcedir"
-        ynh_use_nodejs
+    ynh_use_nodejs
+    pushd "$sourcedir/frontend" || ynh_die "Could not pushd $sourcedir/frontend"
         ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" \
-            "$ynh_npm" install
+            "$ynh_npm" ci --no-audit --ignore-scripts
         ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" \
-            "$ynh_npm" run build -- --base="$subpath/"
+            "$ynh_npm" run build
     popd || ynh_die "Could not popd"
 
     mv "$sourcedir/frontend/dist" "$targetdir"
