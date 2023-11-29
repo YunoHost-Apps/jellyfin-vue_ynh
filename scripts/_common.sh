@@ -30,6 +30,8 @@ _npm_build_install() {
             "$ynh_npm" ci --no-audit --ignore-scripts
         ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" \
             "$ynh_npm" run build
+        ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" \
+            "$ynh_npm" cache clean --force
     popd || ynh_die "Could not popd"
 
     ynh_secure_remove --file="$targetdir"
