@@ -32,6 +32,7 @@ _npm_build_install() {
             "$ynh_npm" run build
     popd || ynh_die "Could not popd"
 
+    ynh_secure_remove --file="$targetdir"
     mv "$sourcedir/frontend/dist" "$targetdir"
 }
 
