@@ -7,7 +7,7 @@ name = "Jellyfin Vue Client"
 description.en = "Modern web client for Jellyfin"
 description.fr = "Client web moderne pour Jellyfin"
 
-version = "2023.11.11~ynh1"
+version = "2023.11.11~ynh2"
 
 maintainers = [""]
 
