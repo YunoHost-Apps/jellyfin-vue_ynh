@@ -19,7 +19,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 Jellyfin Vue est la prochaine étape du développement de Jellyfin. C'est une nouvelle interface, basée sur Vue. Des détails peuvent être trouvés ici : https://jellyfin.org/posts/vue-vue3.
 
 
-**Version incluse :** 2023.12.11~ynh1
+**Version incluse :** 2024.01.02~ynh1
 
 ## Captures d’écran
 
