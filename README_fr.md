@@ -21,6 +21,8 @@ Jellyfin Vue est la prochaine étape du développement de Jellyfin. C'est une no
 
 **Version incluse :** 2024.01.05~ynh1
 
+**Démo :** https://jf-vue.pages.dev
+
 ## Captures d’écran
 
 ![Capture d’écran de Jellyfin Vue Client](./doc/screenshots/jellyfin-vue-homepage-2023-04.jpg)
