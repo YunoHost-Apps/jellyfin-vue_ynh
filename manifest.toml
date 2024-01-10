@@ -14,6 +14,8 @@ maintainers = [""]
 [upstream]
 license = "GPL-3.0-only"
 code = "https://github.com/jellyfin/jellyfin-vue"
+demo = "https://jf-vue.pages.dev"
+
 fund = "https://opencollective.com/jellyfin"
 
 [integration]
