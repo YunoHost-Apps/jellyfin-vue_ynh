@@ -23,8 +23,6 @@ Jellyfin Vue is the next step of Jellyfin's development. It's a new frontend, ba
 
 **Demo:** https://jf-vue.pages.dev
 
-**Demo:** https://jf-vue.pages.dev
-
 ## Screenshots
 
 ![Screenshot of Jellyfin Vue Client](./doc/screenshots/jellyfin-vue-homepage-2023-04.jpg)
