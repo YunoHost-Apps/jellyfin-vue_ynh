@@ -16,7 +16,7 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression --message="Upgrading source files..." --weight=1
 
-ynh_setup_source --dest_dir="$install_dir/source"
+ynh_setup_source --dest_dir="$install_dir/source" --full_replace=1
 chown -R $app:www-data "$install_dir"
 
 ynh_script_progression --message="Installing NodeJS..." --weight=20
