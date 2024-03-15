@@ -18,10 +18,9 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 Jellyfin Vue est la prochaine étape du développement de Jellyfin. C'est une nouvelle interface, basée sur Vue. Des détails peuvent être trouvés ici : https://jellyfin.org/posts/vue-vue3.
 
+**Version incluse :** 2024.03.14~ynh1
 
-**Version incluse :** 2024.03.03~ynh1
-
-**Démo :** https://jf-vue.pages.dev
+**Démo :** <https://jf-vue.pages.dev>
 
 ## Captures d’écran
 
@@ -29,9 +28,9 @@ Jellyfin Vue est la prochaine étape du développement de Jellyfin. C'est une no
 
 ## Documentations et ressources
 
-* Dépôt de code officiel de l’app : <https://github.com/jellyfin/jellyfin-vue>
-* YunoHost Store: <https://apps.yunohost.org/app/jellyfin-vue>
-* Signaler un bug : <https://github.com/YunoHost-Apps/jellyfin-vue_ynh/issues>
+- Dépôt de code officiel de l’app : <https://github.com/jellyfin/jellyfin-vue>
+- YunoHost Store : <https://apps.yunohost.org/app/jellyfin-vue>
+- Signaler un bug : <https://github.com/YunoHost-Apps/jellyfin-vue_ynh/issues>
 
 ## Informations pour les développeurs
 
@@ -39,7 +38,7 @@ Merci de faire vos pull request sur la [branche testing](https://github.com/Yuno
 
 Pour essayer la branche testing, procédez comme suit.
 
-``` bash
+```bash
 sudo yunohost app install https://github.com/YunoHost-Apps/jellyfin-vue_ynh/tree/testing --debug
 ou
 sudo yunohost app upgrade jellyfin-vue -u https://github.com/YunoHost-Apps/jellyfin-vue_ynh/tree/testing --debug
