@@ -9,7 +9,7 @@ It shall NOT be edited by hand.
 
 [![Install Jellyfin Vue Client with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=jellyfin-vue)
 
-*[Lire ce readme en français.](./README_fr.md)*
+*[Read this README is other languages.](./ALL_README.md)*
 
 > *This package allows you to install Jellyfin Vue Client quickly and simply on a YunoHost server.
 If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/install) to learn how to install it.*
@@ -18,10 +18,9 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 Jellyfin Vue is the next step of Jellyfin's development. It's a new frontend, based on Vue. See https://jellyfin.org/posts/vue-vue3 for details.
 
+**Shipped version:** 2024.03.23~ynh1
 
-**Shipped version:** 2024.03.03~ynh1
-
-**Demo:** https://jf-vue.pages.dev
+**Demo:** <https://jf-vue.pages.dev>
 
 ## Screenshots
 
@@ -29,17 +28,18 @@ Jellyfin Vue is the next step of Jellyfin's development. It's a new frontend, ba
 
 ## Documentation and resources
 
-* Upstream app code repository: <https://github.com/jellyfin/jellyfin-vue>
-* YunoHost Store: <https://apps.yunohost.org/app/jellyfin-vue>
-* Report a bug: <https://github.com/YunoHost-Apps/jellyfin-vue_ynh/issues>
+- Upstream app code repository: <https://github.com/jellyfin/jellyfin-vue>
+- YunoHost Store: <https://apps.yunohost.org/app/jellyfin-vue>
+- Report a bug: <https://github.com/YunoHost-Apps/jellyfin-vue_ynh/issues>
 
 ## Developer info
 
-Please send your pull request to the [testing branch](https://github.com/YunoHost-Apps/jellyfin-vue_ynh/tree/testing).
+Please send your pull request to the [testing branch](https://github.com/YunoHost-Apps/jellyfin-vue_ynh/tree/testing),
+
 
 To try the testing branch, please proceed like that.
 
-``` bash
+```bash
 sudo yunohost app install https://github.com/YunoHost-Apps/jellyfin-vue_ynh/tree/testing --debug
 or
 sudo yunohost app upgrade jellyfin-vue -u https://github.com/YunoHost-Apps/jellyfin-vue_ynh/tree/testing --debug
