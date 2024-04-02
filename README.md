@@ -9,7 +9,7 @@ It shall NOT be edited by hand.
 
 [![Install Jellyfin Vue Client with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=jellyfin-vue)
 
-*[Read this README is other languages.](./ALL_README.md)*
+*[Read this README in other languages.](./ALL_README.md)*
 
 > *This package allows you to install Jellyfin Vue Client quickly and simply on a YunoHost server.*  
 > *If you don't have YunoHost, please consult [the guide](https://yunohost.org/install) to learn how to install it.*
@@ -19,7 +19,7 @@ It shall NOT be edited by hand.
 Jellyfin Vue is the next step of Jellyfin's development. It's a new frontend, based on Vue. See https://jellyfin.org/posts/vue-vue3 for details.
 
 
-**Shipped version:** 2024.02.22~ynh1
+**Shipped version:** 2024.04.02~ynh1
 
 **Demo:** <https://jf-vue.pages.dev>
 
