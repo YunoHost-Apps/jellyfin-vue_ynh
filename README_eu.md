@@ -19,7 +19,7 @@ EZ editatu eskuz.
 Jellyfin Vue is the next step of Jellyfin's development. It's a new frontend, based on Vue. See https://jellyfin.org/posts/vue-vue3 for details.
 
 
-**Paketatutako bertsioa:** 2024.04.26~ynh1
+**Paketatutako bertsioa:** 2024.04.29~ynh1
 
 **Demoa:** <https://jf-vue.pages.dev>
 
