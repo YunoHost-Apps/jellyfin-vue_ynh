@@ -9,7 +9,7 @@ description.fr = "Client web moderne pour Jellyfin"
 
 version = "2024.04.26~ynh1"
 
-maintainers = [""]
+maintainers = []
 
 [upstream]
 license = "GPL-3.0-only"
