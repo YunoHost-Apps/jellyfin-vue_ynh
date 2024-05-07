@@ -3,7 +3,7 @@
 请勿手动编辑。
 -->
 
-# YunoHost 的 Jellyfin Vue Client
+# YunoHost 上的 Jellyfin Vue Client
 
 [![集成程度](https://dash.yunohost.org/integration/jellyfin-vue.svg)](https://dash.yunohost.org/appci/app/jellyfin-vue) ![工作状态](https://ci-apps.yunohost.org/ci/badges/jellyfin-vue.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/jellyfin-vue.maintain.svg)
 
@@ -19,7 +19,7 @@
 Jellyfin Vue is the next step of Jellyfin's development. It's a new frontend, based on Vue. See https://jellyfin.org/posts/vue-vue3 for details.
 
 
-**分发版本：** 2024.04.26~ynh1
+**分发版本：** 2024.05.06~ynh1
 
 **演示：** <https://jf-vue.pages.dev>
 
