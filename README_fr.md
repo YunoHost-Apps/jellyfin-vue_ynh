@@ -19,7 +19,7 @@ Il NE doit PAS être modifié à la main.
 Jellyfin Vue est la prochaine étape du développement de Jellyfin. C'est une nouvelle interface, basée sur Vue. Des détails peuvent être trouvés ici : https://jellyfin.org/posts/vue-vue3.
 
 
-**Version incluse :** 2024.05.06~ynh1
+**Version incluse :** 2024.05.09~ynh1
 
 **Démo :** <https://jf-vue.pages.dev>
 
