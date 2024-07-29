@@ -19,7 +19,7 @@ Ini TIDAK boleh diedit dengan tangan.
 Jellyfin Vue is the next step of Jellyfin's development. It's a new frontend, based on Vue. See https://jellyfin.org/posts/vue-vue3 for details.
 
 
-**Versi terkirim:** 2024.07.19~ynh1
+**Versi terkirim:** 2024.07.24~ynh1
 
 **Demo:** <https://jf-vue.pages.dev>
 
@@ -29,7 +29,7 @@ Jellyfin Vue is the next step of Jellyfin's development. It's a new frontend, ba
 
 ## Dokumentasi dan sumber daya
 
-- Repositori kode aplikasi hulu: <https://github.com/jellyfin/jellyfin-vue>
+- Depot kode aplikasi hulu: <https://github.com/jellyfin/jellyfin-vue>
 - Gudang YunoHost: <https://apps.yunohost.org/app/jellyfin-vue>
 - Laporkan bug: <https://github.com/YunoHost-Apps/jellyfin-vue_ynh/issues>
 
