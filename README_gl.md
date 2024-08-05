@@ -19,7 +19,7 @@ NON debe editarse manualmente.
 Jellyfin Vue is the next step of Jellyfin's development. It's a new frontend, based on Vue. See https://jellyfin.org/posts/vue-vue3 for details.
 
 
-**Versión proporcionada:** 2024.07.24~ynh1
+**Versión proporcionada:** 2024.08.02~ynh1
 
 **Demo:** <https://jf-vue.pages.dev>
 
