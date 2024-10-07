@@ -19,7 +19,7 @@ No se debe editar a mano.
 Jellyfin Vue is the next step of Jellyfin's development. It's a new frontend, based on Vue. See https://jellyfin.org/posts/vue-vue3 for details.
 
 
-**Versión actual:** 2024.09.01~ynh1
+**Versión actual:** 2024.10.04~ynh1
 
 **Demo:** <https://jf-vue.pages.dev>
 
@@ -35,7 +35,7 @@ Jellyfin Vue is the next step of Jellyfin's development. It's a new frontend, ba
 
 ## Información para desarrolladores
 
-Por favor enviar sus correcciones a la [`branch testing`](https://github.com/YunoHost-Apps/jellyfin-vue_ynh/tree/testing
+Por favor enviar sus correcciones a la [rama `testing`](https://github.com/YunoHost-Apps/jellyfin-vue_ynh/tree/testing).
 
 Para probar la rama `testing`, sigue asÍ:
 
