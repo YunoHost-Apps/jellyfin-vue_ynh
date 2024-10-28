@@ -1,14 +1,10 @@
 #!/bin/bash
 
 #=================================================
-# COMMON VARIABLES
+# COMMON VARIABLES AND CUSTOM HELPERS
 #=================================================
 
 nodejs_version=20
-
-#=================================================
-# PERSONAL HELPERS
-#=================================================
 
 _patch_config_json() {
     sourcedir=$1
@@ -24,20 +20,18 @@ _npm_build_install() {
     targetdir=$2
     subpath=$3
 
-    ynh_use_nodejs
     pushd "$sourcedir/frontend" || ynh_die "Could not pushd $sourcedir/frontend"
-        ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" \
-            "$ynh_npm" ci --no-audit --ignore-scripts
-        ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" \
-            "$ynh_npm" run build
-        ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" \
-            "$ynh_npm" cache clean --force
+        ynh_hide_warnings ynh_exec_as_app node_load_PATH" \
+            npm ci --no-audit --ignore-scripts
+        ynh_hide_warnings ynh_exec_as_app node_load_PATH" \
+            npm run build
+        ynh_hide_warnings ynh_exec_as_app node_load_PATH" \
+            npm cache clean --force
     popd || ynh_die "Could not popd"
 
-    ynh_secure_remove --file="$targetdir"
+    ynh_safe_rm "$targetdir"
     mv "$sourcedir/frontend/dist" "$targetdir"
 }
-
 
 _list_jellyfin_urls() {
     yunohost app list --full --json \
@@ -60,11 +54,3 @@ with open(file, "w", encoding="utf-8") as configfile:
 _append_to_server_urls() {
     python3 -c "$PYTHON_APPEND_TO_SERVER_URLS" "$@"
 }
-
-#=================================================
-# EXPERIMENTAL HELPERS
-#=================================================
-
-#=================================================
-# FUTURE OFFICIAL HELPERS
-#=================================================
