@@ -5,7 +5,9 @@
 
 # Jellyfin Vue Client для YunoHost
 
-[![Уровень интеграции](https://dash.yunohost.org/integration/jellyfin-vue.svg)](https://ci-apps.yunohost.org/ci/apps/jellyfin-vue/) ![Состояние работы](https://ci-apps.yunohost.org/ci/badges/jellyfin-vue.status.svg) ![Состояние сопровождения](https://ci-apps.yunohost.org/ci/badges/jellyfin-vue.maintain.svg)
+[![Уровень интеграции](https://apps.yunohost.org/badge/integration/jellyfin-vue)](https://ci-apps.yunohost.org/ci/apps/jellyfin-vue/)
+![Состояние работы](https://apps.yunohost.org/badge/state/jellyfin-vue)
+![Состояние сопровождения](https://apps.yunohost.org/badge/maintained/jellyfin-vue)
 
 [![Установите Jellyfin Vue Client с YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=jellyfin-vue)
 
@@ -19,7 +21,7 @@
 Jellyfin Vue is the next step of Jellyfin's development. It's a new frontend, based on Vue. See https://jellyfin.org/posts/vue-vue3 for details.
 
 
-**Поставляемая версия:** 2024.10.26~ynh1
+**Поставляемая версия:** 2024.11.29~ynh1
 
 **Демо-версия:** <https://jf-vue.pages.dev>
 
