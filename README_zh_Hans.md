@@ -21,7 +21,7 @@
 Jellyfin Vue is the next step of Jellyfin's development. It's a new frontend, based on Vue. See https://jellyfin.org/posts/vue-vue3 for details.
 
 
-**分发版本：** 2024.12.29~ynh1
+**分发版本：** 2025.01.02~ynh1
 
 **演示：** <https://jf-vue.pages.dev>
 
