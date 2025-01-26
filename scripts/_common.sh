@@ -4,7 +4,7 @@
 # COMMON VARIABLES AND CUSTOM HELPERS
 #=================================================
 
-nodejs_version=22
+nodejs_version="22"
 
 _patch_config_json() {
     sourcedir=$1
@@ -21,12 +21,9 @@ _npm_build_install() {
     subpath=$3
 
     pushd "$sourcedir/frontend" || ynh_die "Could not pushd $sourcedir/frontend"
-        ynh_hide_warnings ynh_exec_as_app node_load_PATH \
-            npm ci --no-audit --ignore-scripts
-        ynh_hide_warnings ynh_exec_as_app node_load_PATH \
-            npm run build
-        ynh_hide_warnings ynh_exec_as_app node_load_PATH \
-            npm cache clean --force
+        ynh_hide_warnings ynh_exec_as_app npm ci --no-audit --ignore-scripts
+        ynh_hide_warnings ynh_exec_as_app npm run build
+        ynh_hide_warnings ynh_exec_as_app npm cache clean --force
     popd || ynh_die "Could not popd"
 
     ynh_safe_rm "$targetdir"
