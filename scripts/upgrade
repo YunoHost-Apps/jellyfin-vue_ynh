@@ -13,6 +13,8 @@ ynh_script_progression "Upgrading source files..."
 ynh_setup_source --dest_dir="$install_dir/source" --full_replace
 ynh_script_progression "Installing NodeJS..."
 
+chown -R $app:www-data "$install_dir"
+
 # Install Nodejs
 ynh_nodejs_install
 
@@ -21,7 +23,6 @@ ynh_script_progression "Building Jellyfin Vue... (this will take some time and r
 _patch_config_json "$install_dir/source"
 _npm_build_install "$install_dir/source" "$install_dir/www" "$path/"
 
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:www-data "$install_dir"
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
