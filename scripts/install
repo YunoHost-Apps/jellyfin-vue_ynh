@@ -4,26 +4,19 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# APP "BUILD" (DEPLOYING SOURCES, VENV, COMPILING ETC)
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Setting up source files..."
 
 ynh_setup_source --dest_dir="$install_dir/source"
 
-chown -R $app:www-data "$install_dir"
-
 #=================================================
 # INSTALL DEPENDENCIES
 #=================================================
 ynh_script_progression "Installing NodeJS..."
 
-# Install Nodejs
 ynh_nodejs_install
 
-#=================================================
-# SPECIFIC SETUP
 #=================================================
 # Build Jellyfin-vue
 #=================================================
@@ -37,11 +30,8 @@ _npm_build_install "$install_dir/source" "$install_dir/www" "$path/"
 #=================================================
 ynh_script_progression "Adding system configurations related to $app..."
 
-# Create a dedicated NGINX config using the conf/nginx.conf template
 ynh_config_add_nginx
 
-#=================================================
-# APP INITIAL CONFIGURATION
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
@@ -55,4 +45,5 @@ done
 #=================================================
 # END OF SCRIPT
 #=================================================
+
 ynh_script_progression "Installation of $app completed"

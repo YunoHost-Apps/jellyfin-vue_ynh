@@ -4,21 +4,23 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# "REBUILD" THE APP (DEPLOY NEW SOURCES, RERUN NPM BUILD...)
+# INSTALL DEPENDENCIES
+#=================================================
+ynh_script_progression "Installing dependencies..."
+
+ynh_nodejs_install
+
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Upgrading source files..."
 
 ynh_setup_source --dest_dir="$install_dir/source" --full_replace
-ynh_script_progression "Installing NodeJS..."
 
-chown -R $app:www-data "$install_dir"
-
-# Install Nodejs
-ynh_nodejs_install
-
-ynh_script_progression "Building Jellyfin Vue... (this will take some time and resources!)"
+#=================================================
+# UPDATE A CONFIG FILE
+#=================================================
+ynh_script_progression "Building $app... (this will take some time and resources!)"
 
 _patch_config_json "$install_dir/source"
 _npm_build_install "$install_dir/source" "$install_dir/www" "$path/"
@@ -30,8 +32,6 @@ ynh_script_progression "Upgrading system configurations related to $app..."
 
 ynh_config_add_nginx
 
-#=================================================
-# RECONFIGURE THE APP (UPDATE CONF, APPLY MIGRATIONS...)
 #=================================================
 # UPDATE A CONFIG FILE
 #=================================================
