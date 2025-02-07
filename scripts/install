@@ -1,16 +1,15 @@
 #!/bin/bash
 
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
 source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# DOWNLOAD, CHECK AND UNPACK SOURCE
+# INITIALIZE AND STORE SETTINGS
 #=================================================
-ynh_script_progression "Setting up source files..."
-
-ynh_setup_source --dest_dir="$install_dir/source"
-
-chown -R "$app": "$install_dir/"
 
 #=================================================
 # INSTALL DEPENDENCIES
@@ -20,12 +19,24 @@ ynh_script_progression "Installing NodeJS..."
 ynh_nodejs_install
 
 #=================================================
-# Build Jellyfin-vue
+# DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression "Building Jellyfin Vue... (this will take some time and resources!)"
+ynh_script_progression "Setting up source files..."
 
-_patch_config_json "$install_dir/source"
-_npm_build_install "$install_dir/source" "$install_dir/www" "$path/"
+# Download, check integrity, uncompress and patch the source from manifest.toml
+ynh_setup_source --dest_dir="$install_dir/source"
+
+chown -R $app:www-data "$install_dir"
+
+#=================================================
+# APP INITIAL CONFIGURATION
+#=================================================
+ynh_script_progression "Adding $app's configuration files..."
+
+# Check if Jellyfin is installed, and configure it as defaultServerURL.
+for url in $(_list_jellyfin_urls); do
+    _append_to_server_urls "$install_dir/www/config.json" "$url"
+done
 
 #=================================================
 # SYSTEM CONFIGURATION
@@ -35,14 +46,12 @@ ynh_script_progression "Adding system configurations related to $app..."
 ynh_config_add_nginx
 
 #=================================================
-# ADD A CONFIGURATION
+# Build Jellyfin-vue
 #=================================================
-ynh_script_progression "Adding $app's configuration..."
+ynh_script_progression "Building Jellyfin Vue... (this will take some time and resources!)"
 
-# Check if Jellyfin is installed, and configure it as defaultServerURL.
-for url in $(_list_jellyfin_urls); do
-    _append_to_server_urls "$install_dir/www/config.json" "$url"
-done
+_patch_config_json "$install_dir/source"
+_npm_build_install "$install_dir/source" "$install_dir/www" "$path/"
 
 #=================================================
 # END OF SCRIPT

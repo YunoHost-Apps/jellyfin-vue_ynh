@@ -1,7 +1,19 @@
 #!/bin/bash
 
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
 source _common.sh
 source /usr/share/yunohost/helpers
+
+#=================================================
+# MODIFY URL IN NGINX CONF
+#=================================================
+ynh_script_progression "Updating NGINX web server configuration..."
+
+# this will most likely adjust NGINX config correctly
+ynh_config_change_url_nginx
 
 #=================================================
 # INSTALL DEPENDENCIES
@@ -9,13 +21,6 @@ source /usr/share/yunohost/helpers
 ynh_script_progression "Installing NodeJS..."
 
 ynh_nodejs_install
-
-#=================================================
-# MODIFY URL IN NGINX CONF
-#=================================================
-ynh_script_progression "Updating NGINX web server configuration..."
-
-ynh_config_change_url_nginx
 
 #=================================================
 # Build Jellyfin-vue

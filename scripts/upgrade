@@ -1,7 +1,16 @@
 #!/bin/bash
 
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
 source _common.sh
 source /usr/share/yunohost/helpers
+
+#=================================================
+# ENSURE DOWNWARD COMPATIBILITY
+#=================================================
+ynh_script_progression "Ensuring downward compatibility..."
 
 #=================================================
 # INSTALL DEPENDENCIES
@@ -15,17 +24,20 @@ ynh_nodejs_install
 #=================================================
 ynh_script_progression "Upgrading source files..."
 
+# Download, check integrity, uncompress and patch the source from manifest.toml
 ynh_setup_source --dest_dir="$install_dir/source" --full_replace
 
-chown -R "$app": "$install_dir/"
+chown -R $app:www-data "$install_dir"
 
 #=================================================
 # UPDATE A CONFIG FILE
 #=================================================
-ynh_script_progression "Building $app... (this will take some time and resources!)"
+ynh_script_progression "Updating configuration..."
 
-_patch_config_json "$install_dir/source"
-_npm_build_install "$install_dir/source" "$install_dir/www" "$path/"
+# Check if Jellyfin is installed, and configure it as defaultServerURL.
+for url in $(_list_jellyfin_urls); do
+    _append_to_server_urls "$install_dir/www/config.json" "$url"
+done
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
@@ -37,12 +49,10 @@ ynh_config_add_nginx
 #=================================================
 # UPDATE A CONFIG FILE
 #=================================================
-ynh_script_progression "Updating configuration..."
+ynh_script_progression "Building $app... (this will take some time and resources!)"
 
-# Check if Jellyfin is installed, and configure it as defaultServerURL.
-for url in $(_list_jellyfin_urls); do
-    _append_to_server_urls "$install_dir/www/config.json" "$url"
-done
+_patch_config_json "$install_dir/source"
+_npm_build_install "$install_dir/source" "$install_dir/www" "$path/"
 
 #=================================================
 # END OF SCRIPT

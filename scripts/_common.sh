@@ -22,12 +22,14 @@ _npm_build_install() {
 
     pushd "$sourcedir/frontend" || ynh_die "Could not pushd $sourcedir/frontend"
         ynh_hide_warnings ynh_exec_as_app npm ci --no-audit --ignore-scripts
-        ynh_hide_warnings ynh_exec_as_app npm run build
+        ynh_hide_warnings ynh_exec_as_app  NODE_OPTIONS="--max-old-space-size=3000" npm run build
         ynh_hide_warnings ynh_exec_as_app npm cache clean --force
     popd || ynh_die "Could not popd"
 
     ynh_safe_rm "$targetdir"
     mv "$sourcedir/frontend/dist" "$targetdir"
+    chown -R "$app":www-data "$targetdir"
+    ynh_safe_rm "$sourcedir"
 }
 
 _list_jellyfin_urls() {
