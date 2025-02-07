@@ -10,6 +10,8 @@ ynh_script_progression "Setting up source files..."
 
 ynh_setup_source --dest_dir="$install_dir/source"
 
+chown -R "$app": "install_dir/"
+
 #=================================================
 # INSTALL DEPENDENCIES
 #=================================================

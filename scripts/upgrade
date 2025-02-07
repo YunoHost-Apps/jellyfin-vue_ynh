@@ -17,6 +17,8 @@ ynh_script_progression "Upgrading source files..."
 
 ynh_setup_source --dest_dir="$install_dir/source" --full_replace
 
+chown -R "$app": "install_dir/"
+
 #=================================================
 # UPDATE A CONFIG FILE
 #=================================================
