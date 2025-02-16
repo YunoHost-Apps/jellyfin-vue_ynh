@@ -21,7 +21,7 @@ Nie powinno być ono edytowane ręcznie.
 Jellyfin Vue is the next step of Jellyfin's development. It's a new frontend, based on Vue. See https://jellyfin.org/posts/vue-vue3 for details.
 
 
-**Dostarczona wersja:** 2025.02.08~ynh1
+**Dostarczona wersja:** 2025.02.10~ynh1
 
 **Demo:** <https://jf-vue.pages.dev>
 
