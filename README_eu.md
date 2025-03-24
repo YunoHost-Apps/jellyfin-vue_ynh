@@ -39,7 +39,7 @@ Jellyfin Vue is the next step of Jellyfin's development. It's a new frontend, ba
 
 Bidali `pull request`a [`testing` abarrera](https://github.com/YunoHost-Apps/jellyfin-vue_ynh/tree/testing).
 
-`testing` abarra probatzeko, ondorengoa egin:
+`testing` abarra probatzeko, honakoa egin:
 
 ```bash
 sudo yunohost app install https://github.com/YunoHost-Apps/jellyfin-vue_ynh/tree/testing --debug

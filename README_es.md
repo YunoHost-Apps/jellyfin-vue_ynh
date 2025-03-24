@@ -3,7 +3,7 @@ Este archivo README esta generado automaticamente<https://github.com/YunoHost/ap
 No se debe editar a mano.
 -->
 
-# Jellyfin Vue Client para Yunohost
+# Jellyfin Vue Client para YunoHost
 
 [![Nivel de integración](https://apps.yunohost.org/badge/integration/jellyfin-vue)](https://ci-apps.yunohost.org/ci/apps/jellyfin-vue/)
 ![Estado funcional](https://apps.yunohost.org/badge/state/jellyfin-vue)
