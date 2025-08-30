@@ -7,7 +7,7 @@ name = "Jellyfin Vue Client"
 description.en = "Modern web client for Jellyfin"
 description.fr = "Client web moderne pour Jellyfin"
 
-version = "2025.08.10~ynh1"
+version = "2025.08.10~ynh2"
 
 maintainers = []
 
@@ -19,7 +19,7 @@ demo = "https://jf-vue.pages.dev"
 fund = "https://opencollective.com/jellyfin"
 
 [integration]
-yunohost = ">= 12.0.9"
+yunohost = ">= 12.1.15"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
@@ -61,3 +61,6 @@ ram.runtime = "0M"
 
     [resources.permissions]
     main.url = "/"
+
+    [resources.nodejs]
+    version = "22"
