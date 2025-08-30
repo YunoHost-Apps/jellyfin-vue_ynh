@@ -13,13 +13,6 @@ ynh_setup_source --dest_dir="$install_dir/source"
 chown -R "$app":www-data "$install_dir/"
 
 #=================================================
-# INSTALL DEPENDENCIES
-#=================================================
-ynh_script_progression "Installing NodeJS..."
-
-ynh_nodejs_install
-
-#=================================================
 # Build Jellyfin-vue
 #=================================================
 ynh_script_progression "Building Jellyfin Vue... (this will take some time and resources!)"
