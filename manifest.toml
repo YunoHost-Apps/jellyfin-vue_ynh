@@ -63,4 +63,4 @@ ram.runtime = "0M"
     main.url = "/"
 
     [resources.nodejs]
-    version = "22"
+    version = "24"
