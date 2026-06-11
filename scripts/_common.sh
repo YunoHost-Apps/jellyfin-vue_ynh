@@ -10,7 +10,7 @@ _patch_config_json() {
     # Required for sub-path installation
     sed -i \
         "s|'/config.json'|import.meta.env.BASE_URL + 'config.json'|" \
-        "$1/frontend/src/utils/external-config.ts"
+        "$1/packages/frontend/src/utils/external-config.ts"
 }
 
 _npm_build_install() {
@@ -18,14 +18,14 @@ _npm_build_install() {
     targetdir=$2
     subpath=$3
 
-    pushd "$sourcedir/frontend" || ynh_die "Could not pushd $sourcedir/frontend"
+    pushd "$sourcedir/packages/frontend" || ynh_die "Could not pushd $sourcedir/packages/frontend"
         ynh_hide_warnings ynh_exec_as_app npm ci --no-audit --ignore-scripts
         ynh_hide_warnings ynh_exec_as_app npm run build
         ynh_hide_warnings ynh_exec_as_app npm cache clean --force
     popd || ynh_die "Could not popd"
 
     ynh_safe_rm "$targetdir"
-    mv "$sourcedir/frontend/dist" "$targetdir"
+    mv "$sourcedir/packages/frontend/dist" "$targetdir"
 }
 
 _list_jellyfin_urls() {
