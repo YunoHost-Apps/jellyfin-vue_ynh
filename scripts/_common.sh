@@ -23,7 +23,6 @@ _pnpm_build_install() {
         ynh_hide_warnings corepack enable && corepack prepare pnpm@10 --activate
         ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" corepack pnpm install --frozen-lockfile --aggregate-output
         ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm build
-    #    ynh_hide_warnings ynh_exec_as_app pnpm prune --prod --ignore-scripts
         ynh_hide_warnings ynh_exec_as_app pnpm store prune
     popd || ynh_die "Could not popd"
 
