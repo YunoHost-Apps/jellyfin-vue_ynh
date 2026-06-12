@@ -18,7 +18,7 @@ ynh_script_progression "Building Jellyfin Vue... (this will take some time and r
 # Already patched in install script
 # _patch_config_json "$install_dir/source"
 rm -rf "$install_dir/www"
-_npm_build_install "$install_dir/source" "$install_dir/www" "$path/"
+_pnpm_build_install "$install_dir/source" "$install_dir/www" "$path/"
 
 #=================================================
 # ADD A CONFIGURATION

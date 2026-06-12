@@ -10,22 +10,24 @@ _patch_config_json() {
     # Required for sub-path installation
     sed -i \
         "s|'/config.json'|import.meta.env.BASE_URL + 'config.json'|" \
-        "$1/frontend/src/utils/external-config.ts"
+        "$1/packages/frontend/src/utils/external-config.ts"
 }
 
-_npm_build_install() {
+_pnpm_build_install() {
     sourcedir=$1
     targetdir=$2
     subpath=$3
 
-    pushd "$sourcedir/frontend" || ynh_die "Could not pushd $sourcedir/frontend"
-        ynh_hide_warnings ynh_exec_as_app npm ci --no-audit --ignore-scripts
-        ynh_hide_warnings ynh_exec_as_app npm run build
-        ynh_hide_warnings ynh_exec_as_app npm cache clean --force
+    pushd "$sourcedir/packages/frontend" || ynh_die "Could not pushd $sourcedir/packages/frontend"
+        export CYPRESS_INSTALL_BINARY=0
+        ynh_hide_warnings corepack enable && corepack prepare pnpm@10 --activate
+        ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" corepack pnpm install --frozen-lockfile --aggregate-output
+        ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm build
+        ynh_hide_warnings ynh_exec_as_app pnpm store prune
     popd || ynh_die "Could not popd"
 
     ynh_safe_rm "$targetdir"
-    mv "$sourcedir/frontend/dist" "$targetdir"
+    mv "$sourcedir/packages/frontend/dist" "$targetdir"
 }
 
 _list_jellyfin_urls() {
