@@ -13,15 +13,18 @@ _patch_config_json() {
         "$1/packages/frontend/src/utils/external-config.ts"
 }
 
-_npm_build_install() {
+_pnpm_build_install() {
     sourcedir=$1
     targetdir=$2
     subpath=$3
 
     pushd "$sourcedir/packages/frontend" || ynh_die "Could not pushd $sourcedir/packages/frontend"
-        ynh_hide_warnings ynh_exec_as_app npm ci --no-audit --ignore-scripts
-        ynh_hide_warnings ynh_exec_as_app npm run build
-        ynh_hide_warnings ynh_exec_as_app npm cache clean --force
+        export CYPRESS_INSTALL_BINARY=0
+        ynh_hide_warnings corepack enable && corepack prepare pnpm@10 --activate
+        ynh_hide_warnings ynh_exec_as_app corepack pnpm i --frozen-lockfile
+        ynh_hide_warnings ynh_exec_as_app pnpm build
+        ynh_hide_warnings ynh_exec_as_app pnpm prune --prod --ignore-scripts
+        ynh_hide_warnings ynh_exec_as_app pnpm store prune
     popd || ynh_die "Could not popd"
 
     ynh_safe_rm "$targetdir"
