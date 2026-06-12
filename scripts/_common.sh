@@ -23,8 +23,8 @@ _pnpm_build_install() {
         ynh_hide_warnings corepack enable && corepack prepare pnpm@10 --activate
         ynh_hide_warnings ynh_exec_as_app corepack pnpm i --frozen-lockfile
         ynh_hide_warnings ynh_exec_as_app pnpm build
-        ynh_hide_warnings ynh_exec_as_app pnpm prune --prod --ignore-scripts
-        ynh_hide_warnings ynh_exec_as_app pnpm store prune
+    #    ynh_hide_warnings ynh_exec_as_app pnpm prune --prod --ignore-scripts
+    #    ynh_hide_warnings ynh_exec_as_app pnpm store prune
     popd || ynh_die "Could not popd"
 
     ynh_safe_rm "$targetdir"
